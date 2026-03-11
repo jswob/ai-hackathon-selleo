@@ -1,0 +1,51 @@
+{
+	"enableAllProjectMcpServers": true,
+	"enabledMcpjsonServers": ["serena", "sequential-thinking", "context7"],
+	"permissions": {
+		"allow": ["Edit:*", "Write:*", "MultiEdit:*", "NotebookEdit:*", "Bash:*"],
+		"defaultMode": "acceptEdits"
+	},
+	"hooks": {
+		"UserPromptSubmit": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "$CLAUDE_PROJECT_DIR/.claude/hooks/skill-activation-prompt.sh"
+					}
+				]
+			}
+		],
+		"PostToolUse": [
+			{
+				"matcher": "Edit|MultiEdit|Write",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "$CLAUDE_PROJECT_DIR/.claude/hooks/post-tool-use-tracker.sh"
+					}
+				]
+			}
+		],
+		"Notification": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "if-airpods-connected 'afplay ~/sounds/attention.mp3' 'pushover \"bun-monorepo: attention\"'"
+					}
+				]
+			}
+		],
+		"Stop": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "if-airpods-connected 'afplay ~/sounds/done.mp3' 'pushover \"bun-monorepo: done\"'"
+					}
+				]
+			}
+		]
+	}
+}

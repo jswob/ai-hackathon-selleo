@@ -1,0 +1,13 @@
+{
+	"extends": "@meetings-scheduler/config/typescript/node",
+	"include": [
+		"src/**/*",
+		"*.config.ts",
+		"*.config.test.ts",
+		"*.config.e2e.ts",
+		"*.config.check.ts",
+		"*.setup.ts",
+		"scripts/**/*"
+	],
+	"exclude": ["node_modules", "dist"]
+}

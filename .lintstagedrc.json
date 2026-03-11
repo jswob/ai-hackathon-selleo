@@ -1,0 +1,9 @@
+{
+	"*.{ts,tsx}": ["eslint --fix", "prettier --write", "bun db:schema:check"],
+	"*.{css,scss}": ["prettier --write"],
+	"*.{js,jsx,json,md,yaml,yml}": ["prettier --write"],
+	"*.py": [
+		"cd services/solver && uv run ruff check --fix",
+		"cd services/solver && uv run ruff format"
+	]
+}

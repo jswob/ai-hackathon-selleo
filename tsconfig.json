@@ -1,0 +1,6 @@
+{
+	"extends": "@meetings-scheduler/config/typescript/base",
+	"files": [],
+	"include": ["*.config.js", "*.config.ts", "scripts/**/*.ts"],
+	"references": [{ "path": "./apps/web" }, { "path": "./apps/api" }]
+}

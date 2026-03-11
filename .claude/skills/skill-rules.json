@@ -1,0 +1,231 @@
+{
+	"version": "1.0",
+	"description": "Skill activation triggers for Claude Code. Controls when skills automatically suggest or block actions.",
+	"skills": {
+		"skill-developer": {
+			"type": "domain",
+			"enforcement": "suggest",
+			"priority": "high",
+			"description": "Meta-skill for creating and managing Claude Code skills",
+			"promptTriggers": {
+				"keywords": [
+					"skill system",
+					"create skill",
+					"add skill",
+					"skill triggers",
+					"skill rules",
+					"update skill",
+					"hook system",
+					"skill development",
+					"skill-rules.json"
+				],
+				"intentPatterns": [
+					"(how do|how does|explain).*?skill",
+					"(create|add|modify|build).*?skill",
+					"skill.*?(work|trigger|activate|system)"
+				]
+			}
+		},
+		"elysia-drizzle-api-best-practices": {
+			"type": "domain",
+			"enforcement": "suggest",
+			"priority": "high",
+			"description": "Elysia, Drizzle ORM, API testing, and development workflow best practices reference",
+			"promptTriggers": {
+				"keywords": [
+					"elysia route",
+					"elysia plugin",
+					"elysia validation",
+					"elysia lifecycle",
+					"elysia handler",
+					"elysia guard",
+					"elysia scope",
+					"elysia error",
+					"elysia middleware",
+					"drizzle schema",
+					"drizzle query",
+					"drizzle insert",
+					"drizzle update",
+					"drizzle delete",
+					"drizzle select",
+					"drizzle relation",
+					"drizzle transaction",
+					"drizzle migration",
+					"pgTable",
+					"api best practices",
+					"api test",
+					"api route",
+					"api endpoint",
+					"route handler",
+					"route testing",
+					"test fixture",
+					"test context",
+					"test factory",
+					"createFixture",
+					"composeFactory",
+					"fixture trait",
+					"transaction isolation",
+					"apps/api",
+					"development workflow",
+					"tdd flow",
+					"db:push:safe",
+					"db:base",
+					"db:snapshot",
+					"database snapshot",
+					"seed database",
+					"db:seed",
+					"pre-commit hook",
+					"drizzle-fixtures",
+					"new model",
+					"new table",
+					"service layer",
+					"service function",
+					"ServiceResult",
+					"handler complexity",
+					"service.ts",
+					"extract handler",
+					"jsdoc"
+				],
+				"intentPatterns": [
+					"(add|create|define|build|modify).*?(route|endpoint|api)",
+					"(add|create|define|modify).*?drizzle.*?(table|column|query|relation)",
+					"(write|add|create|run).*?api.*?test",
+					"(create|define|add|use).*?fixture",
+					"(add|create|define|modify).*?validation.*?(body|query|params)",
+					"(inject|decorate|derive|resolve).*?(service|dependency|context)",
+					"(run|check|verify).*?(typecheck|lint|format|test)",
+					"(create|add|push|migrate).*?(table|model|migration)",
+					"(snapshot|restore|reset|undo).*?database",
+					"(seed|populate).*?(database|data)",
+					"(extract|split|refactor|simplify).*?(handler|route|endpoint|logic)"
+				]
+			}
+		},
+		"plan-reader": {
+			"type": "domain",
+			"enforcement": "suggest",
+			"priority": "high",
+			"description": "Guide for reading and understanding project plans in tmp/active",
+			"promptTriggers": {
+				"keywords": [
+					"tmp/active",
+					"active plan",
+					"continue task",
+					"continue plan",
+					"resume work",
+					"handoff notes",
+					"task progress",
+					"dev-docs",
+					"pick up where"
+				],
+				"intentPatterns": [
+					"(continue|resume|pick up).*?(work|task|plan|implementation)",
+					"(check|read|load|understand).*?(plan|progress|status)",
+					"(what|where).*?(done|completed|remaining|next)",
+					"(start|begin).*?session.*?(on|with)"
+				]
+			}
+		},
+		"react-frontend-best-practices": {
+			"type": "domain",
+			"enforcement": "suggest",
+			"priority": "high",
+			"description": "React SPA best practices: React 19, TanStack Router/Query, Eden Treaty, Zod, Tailwind v4, testing",
+			"promptTriggers": {
+				"keywords": [
+					"react component",
+					"react hook",
+					"react 19",
+					"react best practices",
+					"use() api",
+					"ref as prop",
+					"useCallback",
+					"useMemo",
+					"useReducer",
+					"useState",
+					"useContext",
+					"context provider",
+					"compound component",
+					"headless hook",
+					"container presentational",
+					"tanstack router",
+					"tanstack query",
+					"file-based routing",
+					"route loader",
+					"beforeLoad",
+					"search params",
+					"eden treaty",
+					"query hook",
+					"mutation hook",
+					"cache invalidation",
+					"optimistic update",
+					"queryOptions",
+					"useSuspenseQuery",
+					"sse streaming",
+					"zod validation",
+					"form validation",
+					"zod schema",
+					"safeParse",
+					"schema composition",
+					"tailwind css",
+					"tailwind v4",
+					"cva variants",
+					"class-variance-authority",
+					"cn utility",
+					"tailwind-merge",
+					"dark mode",
+					"responsive design",
+					"@theme",
+					"@utility",
+					"vitest",
+					"react testing library",
+					"rtl",
+					"playwright",
+					"e2e test",
+					"component test",
+					"hook testing",
+					"renderHook",
+					"apps/web",
+					"frontend component",
+					"frontend hook",
+					"frontend test",
+					"frontend page",
+					"frontend route",
+					"react performance",
+					"code splitting",
+					"lazy loading",
+					"memo",
+					"react compiler"
+				],
+				"intentPatterns": [
+					"(create|add|build|write|implement).*?(component|hook|page|route)",
+					"(create|add|define).*?react.*?(component|hook|context|provider)",
+					"(configure|setup|use).*?(tanstack|router|query|eden)",
+					"(validate|add validation|zod).*?(form|input|search|params)",
+					"(style|add|create).*?(tailwind|cva|variant|theme)",
+					"(test|write test|add test).*?(component|hook|page|e2e)",
+					"(fetch|query|mutate|cache).*?(data|api|server)",
+					"(manage|handle).*?state.*?(local|context|reducer)"
+				]
+			}
+		}
+	},
+	"notes": {
+		"enforcement_types": {
+			"suggest": "Skill suggestion appears but doesn't block execution",
+			"block": "Requires skill to be used before proceeding (guardrail)",
+			"warn": "Shows warning but allows proceeding"
+		},
+		"priority_levels": {
+			"critical": "Highest - Always trigger when matched",
+			"high": "Important - Trigger for most matches",
+			"medium": "Moderate - Trigger for clear matches",
+			"low": "Optional - Trigger only for explicit matches"
+		},
+		"customization": {
+			"pathPatterns": "Adjust to match your project structure (blog-api, auth-service, etc.)",
+			"keywords": "Add domain-specific terms relevant to your project",
+			"intentPatterns": "Use regex for flexible user intent matching"
+		}
+	}
+}
