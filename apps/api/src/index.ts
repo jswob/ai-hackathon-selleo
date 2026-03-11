@@ -2,6 +2,7 @@ import { join } from 'path';
 import { wrap } from '@bogeychan/elysia-logger';
 import { cors } from '@elysiajs/cors';
 import { Elysia } from 'elysia';
+import { createRoastBattleRoute } from './modules/roast-battle';
 import { logger } from './utils/logger';
 
 // Load environment variables from project root
@@ -39,7 +40,8 @@ const app = new Elysia()
 	.use(wrap(logger))
 	.use(cors())
 	.get('/', () => 'API Server Running!')
-	.get('/health', () => ({ status: 'ok', timestamp: Date.now() }));
+	.get('/health', () => ({ status: 'ok', timestamp: Date.now() }))
+	.use(createRoastBattleRoute());
 
 export type App = typeof app;
 
